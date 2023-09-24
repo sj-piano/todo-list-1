@@ -77,6 +77,6 @@ yarn test
 
 * Endpoints always return an object with an `error` key (which is null if the request is successful), so that a client can easily check for an error before doing anything else.
 
-* We use `nodemon`` for speed of development.
+* We use `nodemon` for speed of development.
 
 * Restarting the app will wipe the database. This is due to the use of `sequelize.sync({force:true})`.
