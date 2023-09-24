@@ -54,7 +54,7 @@ yarn test
 
 # Notes
 
-* If the Labels service is down, the TODO item is created with the label ID 'X'. We store the label ID, not the label name.
+* If the Labels service is down, the TODO item is created with the label ID 'X'. We store the label ID, not the label name. Future: Store the label name temporarily if the label service is down, and use a cron job to look up any missing label IDs.
 
 * Logging is on a per-file basis. A logger is created within a file and adds the filepath at the end of every logged line.
 
