@@ -1,0 +1,31 @@
+version: '3.2'
+
+services:
+
+  api:
+    depends_on:
+      - db
+    image: node:18-slim
+    working_dir: /app
+    volumes:
+      - ${PWD}:/app
+      - "${PWD}/wait-for-it.sh:/tmp/wait-for-it.sh"
+    env_file: .env
+    ports:
+      - "127.0.0.1:${HTTP_PORT}:${HTTP_PORT}"
+    command: "./start.sh"
+    healthcheck:
+      test: "/tmp/wait-for-it.sh localhost:${HTTP_PORT}"
+      timeout: 3s
+      retries: 10
+
+  db:
+    image: postgres
+    volumes:
+      - "${PWD}/db:/var/lib/postgresql/data"
+      - "${PWD}/wait-for-it.sh:/tmp/wait-for-it.sh"
+    env_file: .env
+    healthcheck:
+      test: "/tmp/wait-for-it.sh localhost:${POSTGRES_PORT}"
+      timeout: 3s
+      retries: 10
