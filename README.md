@@ -3,31 +3,6 @@
 Topcon TODO microservice API
 
 
-# Notes
-
-* If the Labels service is down, the TODO item is created with the labelId 'X'. We store the label ID, not the label name.
-
-* Logging is on a per-file basis. A logger is created within a file and adds the filepath at the end of every logged line.
-
-* This microservice is written in NodeJS and Typescript.
-
-* We use a PostgreSQL database and the Sequelize ORM to talk to it.
-
-* We use Docker Compose to set up a `db` container and an `api` container in a network.
-
-* There is a Request middleware that logs each request and response.
-
-* We use the Controller pattern. The TodoController handles all the requests for the `todo` items.
-
-* This project uses the AGPL-3.0 license.
-
-* Endpoints always return an object with an `error` key (which is null if the request is successful), so that a client can easily check for an error before doing anything else.
-
-* We use Nodemon for speed of development.
-
-* Restarting the app will wipe the database. This is due to the use of `sequelize.sync({force:true})`.
-
-
 # Setup
 
 Copy the `.env.example` file to create `.env`. Fill it out with the required values.
@@ -86,3 +61,27 @@ yarn test
 
 You can run `yarn lint` and `yarn lint-fix`.
 
+
+# Notes
+
+* If the Labels service is down, the TODO item is created with the label ID 'X'. We store the label ID, not the label name.
+
+* Logging is on a per-file basis. A logger is created within a file and adds the filepath at the end of every logged line.
+
+* This microservice is written in NodeJS and Typescript.
+
+* We use a PostgreSQL database and the Sequelize ORM to talk to it.
+
+* We use Docker Compose to set up a `db` container and an `api` container in a network.
+
+* There is a Request middleware that logs each request and response.
+
+* We use the Controller pattern. The TodoController handles all the requests for the `todo` items.
+
+* This project uses the AGPL-3.0 license.
+
+* Endpoints always return an object with an `error` key (which is null if the request is successful), so that a client can easily check for an error before doing anything else.
+
+* We use `nodemon`` for speed of development.
+
+* Restarting the app will wipe the database. This is due to the use of `sequelize.sync({force:true})`.
