@@ -57,11 +57,6 @@ yarn test
 ```
 
 
-# Housekeeping
-
-You can run `yarn lint` and `yarn lint-fix`.
-
-
 # Notes
 
 * If the Labels service is down, the TODO item is created with the label ID 'X'. We store the label ID, not the label name.
