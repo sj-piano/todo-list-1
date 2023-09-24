@@ -28,11 +28,6 @@ docker-compose up
 ```
 
 
-# Interact
-
-You can use Postman to make requests to the microservice API. Please start Postman and import the file `Topcon.postman_collection.json`.
-
-
 # Script
 
 ```bash
