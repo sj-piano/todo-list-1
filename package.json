@@ -10,14 +10,14 @@
     "@types/mocha": "10.0.1",
     "@types/node": "20.6.3",
     "@types/pg": "8.10.3",
-    "@typescript-eslint/eslint-plugin": "5.52.0",
-    "@typescript-eslint/parser": "5.0.0",
+    "@typescript-eslint/eslint-plugin": "6.7.3",
+    "@typescript-eslint/parser": "6.7.3",
     "axios": "1.5.0",
     "chai": "4.3.8",
     "chai-http": "4.4.0",
     "dotenv": "16.3.1",
     "eslint": "8.45.0",
-    "eslint-config-standard-with-typescript": "37.0.0",
+    "eslint-config-standard-with-typescript": "38.0.0",
     "eslint-plugin-import": "2.25.2",
     "eslint-plugin-n": "15.0.0 || 16.0.0 ",
     "eslint-plugin-promise": "6.0.0",
@@ -33,6 +33,9 @@
     "typescript": "5.2.2",
     "winston": "3.10.0",
     "winston-daily-rotate-file": "4.7.1"
+  },
+  "resolutions": {
+    "@types/express-serve-static-core": "4.17.37"
   },
   "scripts": {
     "start": "nodemon --ignore ./test/ --ignore ./scripts/ src/index.ts",
