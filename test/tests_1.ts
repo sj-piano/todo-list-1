@@ -45,6 +45,12 @@ describe('Basic endpoint tests', function () {
 
 describe('Integration tests', function () {
 
+    /* Larger integration tests are useful for
+    a) testing the API as a whole
+    b) developing in TDD style - it allows you to construct the necessary state within the API to test the new functionality.
+    Later, can write smaller tests.
+    */
+
     it('should create, retrieve, update, and delete a todo item', async function () {
       // Create a todo item.
       const todoData1 = {

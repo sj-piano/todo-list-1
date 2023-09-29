@@ -2,6 +2,12 @@
 import chai from "chai";
 import chaiHttp from 'chai-http';
 
+/* Notes
+
+Example script that demonstrates how to communicate with the API.
+
+*/
+
 // Setup
 chai.use(chaiHttp);
 
