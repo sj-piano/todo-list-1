@@ -54,7 +54,6 @@ export const testDbConnection = async (sequelize: any) => {
 export class Todo extends Model implements TODO {
   declare id: number;
   declare message: string;
-  declare label: string;
   declare dueDate: Date;
 }
 
@@ -66,10 +65,6 @@ Todo.init(
       primaryKey: true,
     },
     message: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    label: {
       type: DataTypes.STRING,
       allowNull: false,
     },

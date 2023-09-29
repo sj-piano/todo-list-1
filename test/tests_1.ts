@@ -49,7 +49,6 @@ describe('Integration tests', function () {
       // Create a todo item.
       const todoData1 = {
         message: 'Hello',
-        label: 'Chore',
       };
       const response1 = await chai.request(baseURL).post(`/todo/create`).send(todoData1);
       assert.equal(response1.status, 200);
@@ -66,7 +65,6 @@ describe('Integration tests', function () {
       // Update the todo item.
       const todoData3 = {
         message: 'Hola',
-        label: 'Task',
       };
       const response3 = await chai.request(baseURL).put(`/todo/${todoId}/update`).send(todoData3);
       assert.equal(response3.status, 200);
