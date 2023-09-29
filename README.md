@@ -1,6 +1,6 @@
 # topcon
 
-Topcon TODO microservice API
+Todo List microservice API
 
 
 # Setup
@@ -15,7 +15,6 @@ POSTGRES_PORT=5432
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 POSTGRES_DB=postgres
-LABELS_ENDPOINT='https://nptwpxthvb.eu-west-1.awsapprunner.com/labels'
 ```
 
 
@@ -29,6 +28,8 @@ docker-compose up
 
 
 # Script
+
+We include an example of using a script to access the API.
 
 ```bash
 yarn ts-node scripts/get-todo-all.ts
@@ -54,15 +55,13 @@ yarn test
 
 # Notes
 
-* If the Labels service is down, the TODO item is created with the label ID 'X'. We store the label ID, not the label name. Future: Store the label name temporarily if the label service is down, and use a cron job to look up any missing label IDs.
-
 * Logging is on a per-file basis. A logger is created within a file and adds the filepath at the end of every logged line.
 
-* This microservice is written in NodeJS and Typescript.
+* This microservice is written in Typescript and runs on NodeJS.
 
-* We use a PostgreSQL database and the Sequelize ORM to talk to it.
+* We use a PostgreSQL database and the Sequelize ORM.
 
-* We use Docker Compose to set up a `db` container and an `api` container in a network.
+* We use Docker Compose to set up a `db` container and an `api` container in a bridge network.
 
 * There is a Request middleware that logs each request and response.
 
