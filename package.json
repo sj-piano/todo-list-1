@@ -1,5 +1,5 @@
 {
-  "name": "topcon-todo-microservice-api",
+  "name": "todo-list-microservice-api",
   "version": "1.0.0",
   "license": "AGPL-3.0-only",
   "dependencies": {
