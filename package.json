@@ -30,6 +30,7 @@
     "sequelize": "6.33.0",
     "sequelize-cli": "6.6.1",
     "ts-node": "10.9.1",
+    "tsconfig-paths": "4.2.0",
     "typescript": "5.2.2",
     "winston": "3.10.0",
     "winston-daily-rotate-file": "4.7.1"
