@@ -43,7 +43,13 @@ Run one test:
 ```bash
 yarn test --grep "Hello World"
 
-yarn test --grep "should create, retrieve, update, and delete a todo item"
+yarn test --grep "should create a new todo item"
+```
+
+Run test group:
+
+```bash
+yarn test --grep "API functional tests"
 ```
 
 Run all tests:

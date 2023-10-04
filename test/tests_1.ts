@@ -29,13 +29,13 @@ const {
 
 chai.use(chaiHttp);
 
-const baseURL = `http://localhost:${HTTP_PORT}`;
+const baseURL = `http://127.0.0.1:${HTTP_PORT}`;
 
 
-describe('Basic endpoint tests', function () {
+describe('API endpoint tests', function () {
 
-  it('should return Hello World! for the root endpoint', async function () {
-    const res = await chai.request(baseURL).get('/');
+  it('should return Hello World! for the hello endpoint', async function () {
+    const res = await chai.request(baseURL).get('/hello');
     assert.equal(res.status, 200);
     assert.equal(res.body.result, 'Hello World!');
   });
@@ -43,7 +43,7 @@ describe('Basic endpoint tests', function () {
 });
 
 
-describe('Integration tests', function () {
+describe('API integration tests', function () {
 
     /* Larger integration tests are useful for
     a) testing the API as a whole

@@ -21,7 +21,7 @@ for (const controller of controllers) {
   app.use(controller.path, controller.router);
 }
 
-app.get('/', (req, res) => {
+app.get('/hello', (req, res) => {
   res.send({result: 'Hello World!'});
 });
 
