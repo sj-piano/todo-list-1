@@ -85,3 +85,55 @@ describe('API integration tests', function () {
     });
 
 });
+
+
+describe('API functional tests', function () {
+
+  const todoData1 = {
+    message: 'Hello',
+  };
+
+  const todoData2 = {
+    message: 'Hola',
+  };
+
+  let todoId1 : number;
+
+  before(async function () {
+    const response1 = await chai.request(baseURL).post(`/todo/create`).send(todoData1);
+    assert.equal(response1.status, 200);
+    const todo1 = response1.body.result;
+    todoId1 = todo1.id; // store todoId1 for later use
+  });
+
+    it('should create a new todo item', async function () {
+      const response = await chai.request(baseURL).post(`/todo/create`).send(todoData1);
+      assert.equal(response.status, 200);
+      const createdTodo = response.body.result;
+      assert.equal(createdTodo.message, todoData1.message);
+    });
+
+    it('should retrieve an existing todo item', async function () {
+      const response2 = await chai.request(baseURL).get(`/todo/${todoId1}`);
+      assert.equal(response2.status, 200);
+      const retrievedTodo = response2.body.result;
+      assert.equal(retrievedTodo.id, todoId1);
+      assert.equal(retrievedTodo.message, todoData1.message);
+    });
+
+    it('should update an existing todo item', async function () {
+      const response = await chai.request(baseURL).put(`/todo/${todoId1}/update`).send(todoData2);
+      assert.equal(response.status, 200);
+      const updatedTodo = response.body.result;
+      assert.equal(updatedTodo.id, todoId1);
+      assert.equal(updatedTodo.message, todoData2.message);
+    });
+
+    it('should delete an existing todo item', async function () {
+      const response = await chai.request(baseURL).delete(`/todo/${todoId1}/delete`);
+      assert.equal(response.status, 200);
+      const deletedTodo = response.body.result;
+      assert.equal(deletedTodo.id, todoId1);
+    });
+
+});
