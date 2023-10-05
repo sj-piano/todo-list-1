@@ -34,7 +34,7 @@ We include an example of using a script to access the API.
 ```bash
 yarn ts-node scripts/create-todo.ts
 
-yarn ts-node scripts/get-todo-all.ts
+yarn ts-node scripts/get-todos.ts
 ```
 
 
