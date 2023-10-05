@@ -30,7 +30,7 @@ async function main() {
   await sequelize.sync({ force: true }); // Wipes the database.
   log("All models were synchronized successfully. Database is empty.");
   app.listen(process.env.HTTP_PORT, async () => {
-    log(`Listening on port ${process.env.HTTP_PORT}`);
+    logger.info(`Listening on port ${process.env.HTTP_PORT}`);
   });
 }
 

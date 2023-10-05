@@ -42,6 +42,6 @@ async function getTodos() {
     const todos = response.data.result;
     return todos;
   } catch (error) {
-    logger.error('An error occurred:', error.message || error);
+    logger.error(`An error occurred: ${error.message || error}`);
   }
 }

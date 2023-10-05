@@ -40,7 +40,7 @@ async function createTodo() {
     const todoId = result.id;
     return todoId;
   } catch (error) {
-    logger.error('An error occurred:', error.message || error);
+    logger.error(`An error occurred: ${error.message || error}`);
   }
 }
 
@@ -58,6 +58,6 @@ async function getTodo(todoId: number) {
     const todo = result;
     return todo;
   } catch (error) {
-    logger.error('An error occurred:', error.message || error);
+    logger.error(`An error occurred: ${error.message || error}`);
   }
 }

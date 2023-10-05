@@ -47,7 +47,7 @@ export const testDbConnection = async (sequelize: any) => {
     await sequelize.authenticate();
     log("Database connection has been established successfully.");
   } catch (error) {
-    logger.error("Unable to connect to the database:", error);
+    logger.error(`Unable to connect to the database: ${error}`);
   }
 };
 
