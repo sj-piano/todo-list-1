@@ -13,12 +13,12 @@ const { logger, log, lj, deb } = createLogger({fileName: __filename});
 const TodoController = new Controller('/todo');
 
 TodoController.post(
-  '/create',
+  '',
   create
 );
 
 TodoController.get(
-  '/all',
+  '',
   retrieve
 );
 
@@ -28,12 +28,12 @@ TodoController.get(
 );
 
 TodoController.put(
-  '/:id/update',
+  '/:id',
   update
 );
 
 TodoController.delete(
-  '/:id/delete',
+  '/:id',
   remove
 );
 
