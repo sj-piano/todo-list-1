@@ -4,6 +4,7 @@ import axios from 'axios';
 
 
 // Local imports
+import utils, { jd } from '#lib/utils';
 import { createLogger } from '#lib/logging';
 
 
@@ -22,7 +23,7 @@ const baseUrl = 'http://127.0.0.1:9000';
     msg += ' None';
   } else {
     for (let todo of todos) {
-      msg += `\n- ${todo}`;
+      msg += `\n- ${jd(todo)}`;
     }
   }
   log(msg);

@@ -29,7 +29,7 @@ const todoData1 = {
 
 async function createTodo() {
   try {
-    const endpoint = '/todo/create';
+    const endpoint = '/todo';
     const url = `${baseUrl}${endpoint}`;
     const response = await axios.post(url, todoData1);
     if (response.status !== 200) {

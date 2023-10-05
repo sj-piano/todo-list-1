@@ -28,7 +28,7 @@ function isNumericString(value: string): boolean {
 const sleep = ({ seconds }: { seconds: number }) =>
   new Promise((r) => setTimeout(r, seconds * 1000));
 
-function jd(obj: any): string {
+export function jd(obj: any): string {
   return JSON.stringify(obj, null, 2);
 }
 
